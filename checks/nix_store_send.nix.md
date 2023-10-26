@@ -115,8 +115,8 @@ dirname: inputs: pkgs: let
         updated-nixpkgs = pkgs.applyPatches {
             name = "nixpkgs-systemd"; src = "${inputs.old-nixpkgs}";
             patches = [
-                (pkgs.fetchpatch2 { url = "https://github.com/NixOS/nixpkgs/commit/eeff6c493373d3fff11421b55309fab6a1d4ec7d.diff"; sha256 = "sha256-Sqt1FQG+0j9dJMtZiBX+dK3UW5SH5Gtg8zVFTs0F23s="; }) # (irrelevant, but required for the next patch)
-                (pkgs.fetchpatch2 { url = "https://github.com/NixOS/nixpkgs/commit/a14d1a2e7e8c19087897bc646a37f50096b736b1.diff"; sha256 = "sha256-oT0Uv7wBcH7yw6v6w+sicXW96xsFNQ3E+OUjICYyLdI="; }) # systemd: 250.4 -> 251.3
+                (pkgs.fetchpatch2 { url = "https://github.com/NixOS/nixpkgs/commit/eeff6c493373d3fff11421b55309fab6a1d4ec7d.diff"; sha256 = "sha256-Z5vENYxMNBmTUuhzug9Kgi7/21J1X6d7BxqovyOv9fg="; }) # (irrelevant, but required for the next patch)
+                (pkgs.fetchpatch2 { url = "https://github.com/NixOS/nixpkgs/commit/a14d1a2e7e8c19087897bc646a37f50096b736b1.diff"; sha256 = "sha256-XJyqryd13sxZlgJOkg3m4X3pzrkIB80354CQMMz0AvY="; }) # systemd: 250.4 -> 251.3
             ];
         };
     in (final: prev: {
