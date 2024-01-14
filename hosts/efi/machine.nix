@@ -56,4 +56,10 @@ in { imports = [ ({ ## Hardware
     th.hermetic-bootloader.slots.size = lib.mkIf isArm "256M"; # The default arm kernel is much bigger.
 
 
+}) ({
+      ## Azure IoT Edge Config
+      services.aziot-edge.enable = true;
+      virtualisation.docker.enable = true;
+      boot.kernelPackages = pkgs.linuxPackages_latest;
+
 }) ]; }
