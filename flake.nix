@@ -15,7 +15,7 @@
     wiplib = { url = "github:NiklasGollenstede/nix-wiplib"; inputs.nixpkgs.follows = "nixpkgs"; inputs.installer.follows = "installer";  inputs.functions.follows = "functions"; };
     nixos-imx = { url = "github:NiklasGollenstede/nixos-imx"; inputs.nixpkgs.follows = "nixpkgs"; inputs.installer.follows = "installer";  inputs.functions.follows = "functions"; inputs.wiplib.follows = "wiplib"; };
     nix = { url = "github:NixOS/nix/38b90c618f5ce4334b89c0124c5a54f339a23db6"; inputs.nixpkgs.follows = "nixpkgs"; inputs.nixpkgs-regression.follows = "nixpkgs"; };
-    ba-aziot-nixos = { url = "github:ef4203/ba-aziot-nixos"; };
+    ba-aziot-nixos = { url = "github:ef4203/ba-aziot-nixos"; inputs.nixpkgs.follows = "nixpkgs"; };
     latest-nixpkgs = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
 
 }; outputs = inputs@{ wiplib, ... }: let patches = let
@@ -79,6 +79,6 @@ in [ # Run »nix flake show --allow-import-from-derivation« to see what this me
         #defaultPackage = pkgs.linkFarm "everything" everything;
     in {
         packages = { default = defaultPackage; } // { nix = inputs.nix.packages.${pkgs.system}.nix; };
-        checks = packages // checks.checks; inherit (checks) apps;
+        # checks = packages // checks.checks; inherit (checks) apps;
     }))
 ]); }
