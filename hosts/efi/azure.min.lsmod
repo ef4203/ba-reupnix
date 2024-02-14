@@ -1,0 +1,124 @@
+8021q                  45056  0
+aesni_intel           360448  0
+agpgart                53248  3 intel_agp,intel_gtt,ttm
+ahci                   49152  2
+ata_generic            12288  0
+ata_piix               45056  0
+atkbd                  40960  0
+autofs4                57344  0
+backlight              28672  1 drm
+bochs                  16384  0
+bridge                389120  1 br_netfilter
+br_netfilter           36864  0
+button                 24576  0
+ccp                   143360  1 kvm_amd
+configfs               69632  1
+crc16                  12288  1 ext4
+crc32c_generic         12288  0
+crc32c_intel           16384  3
+crc32_pclmul           12288  0
+crc64                  16384  1 crc64_rocksoft
+crc64_rocksoft         16384  1 t10_pi
+crc_t10dif             16384  1 t10_pi
+crct10dif_common       12288  3 crct10dif_generic,crc_t10dif,crct10dif_pclmul
+crct10dif_generic      12288  0
+crct10dif_pclmul       12288  1
+cryptd                 28672  2 crypto_simd,ghash_clmulni_intel
+crypto_simd            16384  1 aesni_intel
+dax                    53248  1 dm_mod
+dmi_sysfs              20480  0
+dm_mod                192512  0
+drm                   749568  6 drm_kms_helper,bochs,drm_vram_helper,drm_ttm_helper,ttm
+drm_kms_helper        253952  4 bochs,drm_vram_helper
+drm_ttm_helper         12288  2 bochs,drm_vram_helper
+drm_vram_helper        28672  1 bochs
+efi_pstore             12288  0
+efivarfs               28672  1
+evdev                  28672  2
+ext4                 1122304  1
+failover               12288  1 net_failover
+fat                    98304  1 vfat
+firmware_class         53248  3 ccp,drm
+floppy                 98304  0
+fuse                  188416  1
+ghash_clmulni_intel    16384  0
+i2c_piix4              28672  0
+i8042                  45056  0
+input_leds             12288  0
+intel_agp              24576  0
+intel_gtt              24576  1 intel_agp
+intel_rapl_common      36864  1 intel_rapl_msr
+intel_rapl_msr         20480  0
+ip6t_rpfilter          12288  1
+ip_tables              28672  0
+ipt_rpfilter           12288  1
+irqbypass              12288  1 kvm
+jbd2                  196608  1 ext4
+joydev                 24576  0
+kvm                  1347584  1 kvm_amd
+kvm_amd               184320  0
+led_class              24576  1 input_leds
+libaes                 12288  1 aesni_intel
+libahci                61440  1 ahci
+libata                450560  5 ata_piix,libahci,ahci,pata_acpi,ata_generic
+libcrc32c              12288  3 nf_conntrack,nf_nat,nf_tables
+libps2                 20480  2 atkbd,psmouse
+llc                    16384  2 bridge,stp
+loop                   36864  0
+mac_hid                12288  0
+macvlan                36864  0
+mbcache                16384  1 ext4
+mousedev               24576  0
+net_failover           24576  1 virtio_net
+nf_conntrack          200704  5 xt_conntrack,nf_nat,xt_nat,nf_conntrack_netlink,xt_MASQUERADE
+nf_conntrack_netlink    61440  0
+nf_defrag_ipv4         12288  1 nf_conntrack
+nf_defrag_ipv6         24576  1 nf_conntrack
+nf_log_syslog          24576  2
+nf_nat                 65536  3 xt_nat,nft_chain_nat,xt_MASQUERADE
+nfnetlink              20480  4 nft_compat,nf_conntrack_netlink,nf_tables
+nf_tables             368640  169 nft_compat,nft_chain_nat
+nft_chain_nat          12288  3
+nft_compat             20480  15
+nls_cp437              16384  1
+nls_iso8859_1          12288  1
+overlay               208896  0
+parport                53248  2 parport_pc,ppdev
+parport_pc             32768  0
+pata_acpi              12288  0
+ppdev                  24576  0
+psmouse               192512  0
+qemu_fw_cfg            20480  0
+rng_core               20480  1 ccp
+rtc_cmos               28672  1
+sch_fq_codel           20480  2
+scsi_common            16384  3 scsi_mod,sd_mod,libata
+scsi_mod              323584  2 sd_mod,libata
+sd_mod                 65536  2
+serio                  28672  6 serio_raw,atkbd,psmouse,i8042
+serio_raw              16384  0
+stp                    12288  1 bridge
+t10_pi                 16384  1 sd_mod
+tap                    32768  0
+tiny_power_button      12288  0
+ttm                   102400  2 drm_vram_helper,drm_ttm_helper
+tun                    69632  0
+veth                   40960  0
+vfat                   20480  1
+virtio                 16384  2 virtio_pci,virtio_net
+virtio_net             86016  0
+virtio_pci             28672  0
+virtio_pci_legacy_dev    16384  1 virtio_pci
+virtio_pci_modern_dev    20480  1 virtio_pci
+virtio_ring            57344  2 virtio_pci,virtio_net
+vivaldi_fmap           12288  1 atkbd
+xfrm_algo              16384  1 xfrm_user
+xfrm_user              57344  1
+x_tables               53248  11 xt_conntrack,ip6t_rpfilter,nft_compat,xt_LOG,xt_tcpudp,xt_addrtype,xt_nat,ipt_rpfilter,xt_pkttype,ip_tables,xt_MASQUERADE
+xt_addrtype            12288  2
+xt_conntrack           12288  3
+xt_LOG                 16384  2
+xt_MASQUERADE          16384  1
+xt_nat                 12288  0
+xt_pkttype             12288  2
+xt_tcpudp              16384  3

@@ -17,7 +17,7 @@ in { imports = [ ({ ## Hardware
 
     th.hermetic-bootloader.loader = "systemd-boot";
 
-    th.minify.shrinkKernel.usedModules = ./minify.lsmod;
+    th.minify.shrinkKernel.usedModules = ./azure.min.lsmod;
 
     boot.initrd.availableKernelModules = [ "virtio_net" "virtio_pci" "virtio_blk" "virtio_scsi" ];
 
@@ -55,11 +55,7 @@ in { imports = [ ({ ## Hardware
 
     th.hermetic-bootloader.slots.size = lib.mkIf isArm "256M"; # The default arm kernel is much bigger.
 
-
-}) ({
-      ## Azure IoT Edge Config
+}) (lib.mkIf true { ## Azure IoT Edge Config
       services.aziot-edge.enable = true;
       virtualisation.docker.enable = true;
-      boot.kernelPackages = pkgs.linuxPackages_latest;
-
 }) ]; }
