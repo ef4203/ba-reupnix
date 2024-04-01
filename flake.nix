@@ -7,7 +7,11 @@
 ); inputs = {
 
     # To update »./flake.lock«: $ nix flake update
-    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-23.11"; };
+    # nixpkgs = { url = "github:NixOS/nixpkgs/nixos-23.11"; };
+    # nixpkgs = { url = "github:NixOS/nixpkgs/01768412a223856e9345f89aa5cf9d3798628a5d"; }; # 23.11 @ 2023-11-01
+    # nixpkgs = { url = "github:NixOS/nixpkgs/9fafb41329fdd37cb2c96ad5fa6fcffbacf7264c"; }; # 23.11 @ 2024-03-16
+    nixpkgs = { url = "github:NixOS/nixpkgs/044d5c630f1d977f49676f854270edc3761535fa"; }; # 23.11 glibc 2.38-44
+    # nixpkgs = { url = "github:NixOS/nixpkgs/6e88989e90cfd4af498ad7c6e4125ca2f8c40992"; }; # 23.11 glibc 2.38-27
     old-nixpkgs = { url = "github:NixOS/nixpkgs/c777cdf5c564015d5f63b09cc93bef4178b19b01"; }; # 22.05 @ 2022-05-05
     new-nixpkgs = { url = "github:NixOS/nixpkgs/9370544d849be8a07193e7611d02e6f6f1b10768"; }; # 22.05 @ 2022-07-29
     functions = { url = "github:NiklasGollenstede/nix-functions"; inputs.nixpkgs.follows = "nixpkgs"; };
@@ -15,7 +19,9 @@
     wiplib = { url = "github:NiklasGollenstede/nix-wiplib"; inputs.nixpkgs.follows = "nixpkgs"; inputs.installer.follows = "installer";  inputs.functions.follows = "functions"; };
     nixos-imx = { url = "github:NiklasGollenstede/nixos-imx"; inputs.nixpkgs.follows = "nixpkgs"; inputs.installer.follows = "installer";  inputs.functions.follows = "functions"; inputs.wiplib.follows = "wiplib"; };
     nix = { url = "github:NixOS/nix/38b90c618f5ce4334b89c0124c5a54f339a23db6"; inputs.nixpkgs.follows = "nixpkgs"; inputs.nixpkgs-regression.follows = "nixpkgs"; };
-    ba-aziot-nixos = { url = "github:ef4203/ba-aziot-nixos"; inputs.nixpkgs.follows = "nixpkgs"; };
+    # ba-aziot-nixos = { url = "github:ef4203/ba-aziot-nixos"; inputs.nixpkgs.follows = "nixpkgs"; };
+    # ba-aziot-nixos = { url = "github:ef4203/ba-aziot-nixos/f9a8bc3d5213fefe72e3817471f2ae1390d6bdb4"; inputs.nixpkgs.follows = "nixpkgs"; }; # Azure IoT Edge 1.4.25
+    ba-aziot-nixos = { url = "github:ef4203/ba-aziot-nixos/ddeb9e81f58193115bbac8d4686c8eee2a152653"; inputs.nixpkgs.follows = "nixpkgs"; }; # Azure IoT Edge 1.4.26
     latest-nixpkgs = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
 
 }; outputs = inputs@{ wiplib, ... }: let patches = let

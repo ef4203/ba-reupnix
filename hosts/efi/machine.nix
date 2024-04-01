@@ -58,4 +58,14 @@ in { imports = [ ({ ## Hardware
 }) (lib.mkIf true { ## Azure IoT Edge Config
       services.aziot-edge.enable = true;
       virtualisation.docker.enable = true;
+      # ba-efk.preinstalled-container-images.enable = true;
+      # ba-efk.preinstalled-container-images.container = [
+      #   ({
+      #     imageName = "busybox";
+      #     imageDigest = "sha256:cb6aeb580841ccd038a2fb39a9d89948a4eced95ed02c1f726d599da65c8f0c5";
+      #     sha256 = "sha256-jmxnCmeOYqLuhBiM+k5xOSDcKJ1ahAsBU+CykCOaTPM=";
+      #     os = "linux";
+      #     arch = "amd64";
+      #   })
+      # ];
 }) ]; }
